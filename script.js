@@ -59,9 +59,29 @@ for (let i = 0; i < csvString.length; i++) {
 // first part
 console.log("part 1");
 const col = [];
-// set length
-const length = 4;
 
+// Count the length based on the number of commas
+let length = 0;
+let countCommas = 1;
+
+for (let i = 0; i < csvString.length; i++) {
+  // break out of loop when newline found
+  if (csvString[i] === "\n") {
+    break;
+  }
+
+  if (csvString[i] === ",") {
+    countCommas++;
+  }
+}
+
+console.log("Number of commas", countCommas);
+
+length = countCommas;
+
+console.log("length is", length);
+
+//
 for (let i = 0; i < length; i++) {
   col[i] = "";
 }
