@@ -92,16 +92,18 @@ console.log(col);
 let mainAry = [];
 let i = 0;
 
+// infinite loop - debug later
 // subary for every newline
-while (i < csvString.length) {
-  let subAry = [];
-  while (csvString[i] !== "\n") {
-    if (csvString[i] === ",") {
-      continue;
-    } else {
-    }
-  }
-}
+// while (i < csvString.length) {
+//   let subAry = [];
+//   while (csvString[i] !== "\n") {
+//     if (csvString[i] === ",") {
+//       continue;
+//     } else {
+//     }
+//   }
+//   i++;
+// }
 
 const obj = {
   id: 42,
