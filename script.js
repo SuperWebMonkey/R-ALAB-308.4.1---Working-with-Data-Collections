@@ -55,3 +55,23 @@ for (let i = 0; i < csvString.length; i++) {
     console.log(cell1, cell2, cell3, cell4);
   }
 }
+
+// first part
+console.log("part 1");
+const col = [];
+// set length
+const length = 4;
+
+for (let i = 0; i < length; i++) {
+  col[i] = "";
+}
+
+console.log(col);
+
+const obj = {
+  id: 42,
+  // name:
+  cell: col,
+};
+
+console.log("object:", obj);
