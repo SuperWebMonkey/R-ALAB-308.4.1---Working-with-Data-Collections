@@ -81,12 +81,27 @@ length = countCommas;
 
 console.log("length is", length);
 
-//
+// Set the number of columns
 for (let i = 0; i < length; i++) {
   col[i] = "";
 }
 
 console.log(col);
+
+// Store result in two dimensional array
+let mainAry = [];
+let i = 0;
+
+// subary for every newline
+while (i < csvString.length) {
+  let subAry = [];
+  while (csvString[i] !== "\n") {
+    if (csvString[i] === ",") {
+      continue;
+    } else {
+    }
+  }
+}
 
 const obj = {
   id: 42,
