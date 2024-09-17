@@ -94,16 +94,26 @@ let i = 0;
 
 // infinite loop - debug later
 // subary for every newline
-// while (i < csvString.length) {
-//   let subAry = [];
-//   while (csvString[i] !== "\n") {
-//     if (csvString[i] === ",") {
-//       continue;
-//     } else {
-//     }
-//   }
-//   i++;
-// }
+while (i < csvString.length) {
+  let col = "";
+  let subAry = [];
+  while (csvString[i] !== "\n") {
+    if (csvString[i] === ",") {
+      // console.log('column:', col);
+      subAry.push(col);
+      continue;
+    } else {
+      col += csvString[i];
+    }
+
+    // case needed since the end of the string does not have a \n
+    if (i === csvString.length) {
+      break;
+    }
+  }
+  mainAry.push(subAry);
+  i++;
+}
 
 const obj = {
   id: 42,
