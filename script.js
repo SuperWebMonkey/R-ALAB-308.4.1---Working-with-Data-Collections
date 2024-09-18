@@ -78,20 +78,53 @@ console.log("\npart 3 - Transforming Data");
 let colAry = mainAry[0];
 console.log("columns are ", colAry);
 let mainAry2 = [];
-const table = {};
 
 for (let i = 1; i < mainAry.length; i++) {
+  let table = {};
   for (j = 0; j < mainAry[i].length; j++) {
     let id = mainAry[0][j];
+    // console.log("id: ", id);
+    console.log(mainAry[i][j]);
     table[id] = mainAry[i][j];
+    // console.log(table[id]);
     // console.log(id);
+    // console.log(table);
   }
-  // console.log(table);
   console.log("");
+  console.log(table);
+  // console.log("");
   mainAry2.push(table);
+  // console.log(mainAry2);
 }
 
 console.log(mainAry2);
 
 // part 4 - Sorting and Manipulating Data
 console.log("\npart 4 - Sorting and Manipulating Data");
+
+// popping off the end
+mainAry2.pop();
+console.log(mainAry2);
+
+// insert at index 1
+mainAry2.splice(1, 0, {
+  ID: "48",
+  Name: "Barry",
+  Occupation: "Runner",
+  Age: "25",
+});
+console.log(mainAry2);
+
+// Calculating the average length
+let total = 0;
+console.log(mainAry2);
+for (let i = 0; i < mainAry2.length; i++) {
+  console.log(`index ${i}:`, mainAry2[i].Age);
+  total += Number(mainAry2[i].Age);
+}
+console.log("total is", total);
+
+let colLength2 = Object.keys(mainAry2[0]).length;
+console.log("Number of keys is", colLength2);
+
+console.log(`The average of all ages in the object is ${total / colLength2}`);
