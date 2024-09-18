@@ -119,7 +119,7 @@ console.log(mainAry2);
 let total = 0;
 console.log(mainAry2);
 for (let i = 0; i < mainAry2.length; i++) {
-  console.log(`index ${i}:`, mainAry2[i].Age);
+  // console.log(`index ${i}:`, mainAry2[i].Age);
   total += Number(mainAry2[i].Age);
 }
 console.log("total is", total);
@@ -128,3 +128,13 @@ let colLength2 = Object.keys(mainAry2[0]).length;
 console.log("Number of keys is", colLength2);
 
 console.log(`The average of all ages in the object is ${total / colLength2}`);
+
+// part 5 - full circle
+console.log("\npart 5 - full circle");
+const circleAry = [];
+console.log(mainAry2);
+
+// for loop for keys
+
+// for loop for values
+for (let i = 0; i < mainAry2; i++) {}
