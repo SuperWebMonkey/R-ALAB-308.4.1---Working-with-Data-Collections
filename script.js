@@ -1,5 +1,7 @@
 console.log("R-ALAB");
 
+//  part 1 - refactoring the code
+
 // part 2 - Expanding Functionality
 // Store result in two dimensional array
 // Split the columns using the split function
@@ -25,6 +27,14 @@ for (let i = 0; i < word.length; i++) {
   }
 }
 // console.log(`num of col is ${numOfCol}`);
+
+// Using cthe numOfCol
+// let splitAry2 = csvString.split(",");
+// console.log(splitAry2);
+
+// for (let i = 0; i < splitAry2.length; i++) {
+//   for (let j = 0; j < splitAry2[j].length; j++) {}
+// }
 
 // adding \n at the end of each string so that it can be used in the if else
 for (let i = 0; i < splitAry.length; i++) {
@@ -62,3 +72,26 @@ for (let i = 0; i < length; i++) {
 }
 
 console.log(mainAry);
+
+// part 3 - Transforming Data
+console.log("\npart 3 - Transforming Data");
+let colAry = mainAry[0];
+console.log("columns are ", colAry);
+let mainAry2 = [];
+const table = {};
+
+for (let i = 1; i < mainAry.length; i++) {
+  for (j = 0; j < mainAry[i].length; j++) {
+    let id = mainAry[0][j];
+    table[id] = mainAry[i][j];
+    // console.log(id);
+  }
+  // console.log(table);
+  console.log("");
+  mainAry2.push(table);
+}
+
+console.log(mainAry2);
+
+// part 4 - Sorting and Manipulating Data
+console.log("\npart 4 - Sorting and Manipulating Data");
