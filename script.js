@@ -1,8 +1,59 @@
 console.log("R-ALAB");
 
 //  part 1 - refactoring the code
+//  and part 2 - teacher's code
+const csvStr =
+  "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26";
 
-// part 2 - Expanding Functionality
+const cellAry = [];
+let currentCell = 0;
+let currentRow = 0;
+let columns = 0;
+let table = [];
+
+for (let i = 0; i < csvStr.length; i++) {
+  // checking for new cell
+  if (csvStr[i] === ",") {
+    if (currentRow === 0) {
+      columns++;
+    }
+    currentCell++;
+    continue;
+  }
+  // checking for a new line
+  if (csvStr[i] === "\n") {
+    // reset the ary
+    cellAry = [];
+    currentCell = 0;
+  }
+
+  // Part 1 code
+  if (cellAry[currentCell]) {
+    cellAry[currentCell] += csvStr[i];
+  } else {
+    cellAry[currentCell] = csvStr[i];
+  }
+
+  // Part 2 code
+  if (table[currentRow] === undefined) {
+    table[currentRow] = [];
+  }
+
+  if (table[currentRow][currentCell]) {
+    cellAry[currentRow][currentCell] += csvStr[i];
+  } else {
+    cellAry[currentRow][currentCell] = csvStr[i];
+  }
+
+  // if (
+  //   (currentCell === columns && csvStr[i + 1] === "\n") ||
+  //   i + 1 === csvString.length
+  // ) {
+  //   console.log(cellAry.toString());
+  // }
+}
+
+// part 2 - Expanding Functionality - My version
 // Store result in two dimensional array
 // Split the columns using the split function
 console.log("\npart 2 - Expanding Functionality");
