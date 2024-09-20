@@ -5,7 +5,7 @@ console.log("R-ALAB");
 const csvStr =
   "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26";
 
-const cellAry = [];
+let cellAry = [];
 let currentCell = 0;
 let currentRow = 0;
 let columns = 0;
@@ -186,6 +186,53 @@ const circleAry = [];
 console.log(mainAry2);
 
 // for loop for keys
+const propAry = [];
+for (const prop in mainAry2[0]) {
+  // console.log(prop);
+  propAry.push(prop);
+}
+// console.log(propAry);
+
+// size for the number of colums
+let cLen2 = propAry.length;
+// console.log("col length; ", cLen2);
 
 // for loop for values
-for (let i = 0; i < mainAry2; i++) {}
+for (let i = 0; i < mainAry2.length; i++) {
+  let obj = mainAry2[i];
+  let values = [];
+  let subAry = [];
+
+  for (let j = 0; j < cLen2; j++) {
+    // console.log(obj[propAry[j]]);
+    subAry.push(obj[propAry[j]]);
+  }
+  // console.log(subAry);
+
+  circleAry.push(subAry);
+}
+
+// console.log(circleAry);
+// putting the key's back into the ary
+circleAry.unshift(propAry);
+console.log(circleAry);
+
+// converting back to a string
+let circleStr = "";
+
+for (let i = 0; i < circleAry.length; i++) {
+  for (let j = 0; j < circleAry[i].length; j++) {
+    if (j !== circleAry[i].length - 1) {
+      circleStr += circleAry[i][j] + ",";
+    } else {
+      circleStr += circleAry[i][j] + "\\n";
+    }
+  }
+  // console.log(circleStr);
+
+  if (i === circleAry.length - 1) {
+    circleStr = circleStr.slice(0, -2);
+  }
+}
+
+console.log(circleStr);
